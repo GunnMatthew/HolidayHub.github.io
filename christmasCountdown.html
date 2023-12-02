@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Holiday Hub</title>
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="styles/countdown.css">
+	<link rel="stylesheet" href="styles/slicknav.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+	<audio autoplay loop>
+		<source src="/media/sleighBells.mp3" type="audio/mpeg"/>
+	</audio>
+</head>
+
+<body>
+	<div class="setHeader">
+		<header>
+			<!--<img src="images/xmasHead.png" alt="Christmas Themed Header">-->
+			<h1>*Holiday+ 0 #Hub*</h1>
+      <div class="horizontalNav">
+					<div class="mobileNav">
+						<ul>
+							<li><a href="index.html">🏠Home </a></li>
+							<li><a href="santasList.html">📜List </a></li>
+							<li><a href="santasGift.html">🎁Gift </a></li>
+							<li><a href="christmasCountdown.html">🗓️Countdown </a></li>
+							<li><a href="https://gunnmatthew.github.io/" target="blank">🌐Old Site </a></li>
+						</ul>
+					</div>
+				</div>
+		</header>
+	</div>
+  <div class="contentContainer">
+    <div class="setNav">
+      <nav>
+        <div>
+					<h1>M E N U</h1>
+						<ul>
+							<li><a href="index.html">🏠 Home</a></li>
+							<li><a href="santasList.html">📜 Santa's List</a></li>
+							<li><a href="santasGift.html">🎁 Santa's Gift</a></li>
+							<li><a href="christmasCountdown.html">🗓️ Christmas Countdown</a></li>
+							<li><a href="https://gunnmatthew.github.io/" target="blank">🌐 Previous Site</a></li>
+						</ul>
+				</div>
+      </nav>
+    </div>
+    <div class="setMain">
+      <main>
+        <h1>Only...</h1>
+              <div id="countdown">
+                  <div class="countdown-box">
+                    <div id="days"></div>
+                    <div>Days</div>
+                  </div>
+                  <div class="countdown-box">
+                    <div id="hours"></div>
+                    <div>Hours</div>
+                  </div>
+                  <div class="countdown-box">
+                    <div id="minutes"></div>
+                    <div>Minutes</div>
+                  </div>
+                  <div class="countdown-box">
+                    <div id="seconds"></div>
+                    <div>Seconds</div>
+                  </div>
+                </div>
+                <h1>Until Christmas!</h1>
+                <script>
+                  function updateCountdown() {
+                    const christmasDay = new Date("December 25, " + new Date().getFullYear()).getTime();
+                    const now = new Date().getTime();
+                    const timeRemaining = christmasDay - now;
+            
+                    // day/hour/minutes/seconds calculation
+                    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            
+                    // Countdown Display
+                    document.getElementById("days").innerText = days;
+                    document.getElementById("hours").innerText = hours;
+                    document.getElementById("minutes").innerText = minutes;
+                    document.getElementById("seconds").innerText = seconds;
+                  }
+          
+                  setInterval(updateCountdown, 1000);
+                  updateCountdown();
+                </script>
+      </main>
+    </div>
+  </div>
+  <div class="setFooter">
+    <footer>
+      <p>Site by Matthew Gunn.</p>
+    </footer>
+  </div>
+</body>
+</html>
